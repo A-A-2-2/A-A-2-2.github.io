@@ -115,12 +115,14 @@ nav small{
 <body>
 
 <header>
-<nav>
-  <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home <small>홈</small></a>
-  <a href="/about/" class="{% if page.url == '/about/' %}active{% endif %}">About <small>소개</small></a>
-  <a href="/categories/" class="{% if page.url == '/categories/' %}active{% endif %}">Categories <small>주제</small></a>
-  <a href="/archive/" class="{% if page.url == '/archive/' %}active{% endif %}">Archive <small>아카이브</small></a>
-</nav>
+  {% unless page.date %}
+  <nav>
+    <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home <small>홈</small></a>
+    <a href="/about/" class="{% if page.url == '/about/' %}active{% endif %}">About <small>소개</small></a>
+    <a href="/categories/" class="{% if page.url == '/categories/' %}active{% endif %}">Categories <small>주제</small></a>
+    <a href="/archive/" class="{% if page.url == '/archive/' %}active{% endif %}">Archive <small>아카이브</small></a>
+  </nav>
+  {% endunless %}
 </header>
 
 <main>
