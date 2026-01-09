@@ -38,6 +38,9 @@
   color:#666;
   margin: 6px 0 24px;
 }
+.post-title{
+  margin-bottom: 4px;
+}
     
   /* Lists */
   ul{ padding-left: 18px; }
@@ -133,6 +136,10 @@ nav small{
 </header>
 
 <main>
+
+  {% if page.title %}
+    <h1 class="post-title">{{ page.title }}</h1>
+  {% endif %}
 
   {% if page.date %}
     <p class="post-date-single">
