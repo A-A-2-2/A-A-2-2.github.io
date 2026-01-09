@@ -33,6 +33,12 @@
   h2{ margin: 1.6em 0 .6em; }
   p{ margin: 0 0 1.2em; }
 
+.post-date-single{
+  font-size:14px;
+  color:#666;
+  margin: 6px 0 24px;
+}
+    
   /* Lists */
   ul{ padding-left: 18px; }
   li{ margin: .4em 0; }
@@ -110,6 +116,7 @@ nav small{
   .post-meta{ color:#a7a7aa; }
   .post-cat{ border-color:#2a2e37; color:#c7c7ca; }
 }
+    
 </style>
 </head>
 <body>
@@ -126,7 +133,15 @@ nav small{
 </header>
 
 <main>
+
+  {% if page.date %}
+    <p class="post-date-single">
+      {{ page.date | date: "%Y-%m-%d" }}
+    </p>
+  {% endif %}
+
   {{ content }}
+
 </main>
 
 </body>
